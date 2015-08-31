@@ -1,0 +1,32 @@
+﻿
+<md-list>
+
+    <md-list-item class="wt-padding-vertical-20"
+                  layout="row"
+                  layout-align="space-between center"
+                  ng-class="{'wt-background-color-grey': $odd}"
+                  ng-repeat="user in travelers | orderBy:'id' track by user.id">
+
+        <div layout="row"
+             layout-align="start"
+             ng-bind="::user.firstName + ' ' + user.lastName + ' (' + (user.email == null ? '' : user.email) + ')'"></div>
+
+        <div layout="row">
+
+            <md-button class="md-primary"
+                       ui-sref="userDetail({userId: user.id})">Detail</md-button>
+
+            <md-button class="md-primary"
+                       ui-sref="wishList({userId: user.id})">Wishes</md-button>
+
+            <md-button class="md-warn"
+                       ng-click="removeUser({user: user})">Remove</md-button>
+
+        </div>
+
+    </md-list-item>
+
+</md-list>
+<!--<div ng-repeat="v in travelers">
+    <span ng-bind="v.firstName + ' ' + v.lastName"></span>
+</div>-->
