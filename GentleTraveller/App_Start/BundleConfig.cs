@@ -34,6 +34,7 @@ namespace GentleTraveller
                     "~/lib/src/angular-material-icons/angular-material-icons.min.js",
                     "~/app/transporterlist/ng-module-transporterlist.js",
                     "~/app/transporterlist/ng-config-transporterlist.js",
+                    "~/app/transporterlist/ng-controller-layout.js",
                     "~/app/transporterlist/ng-controller-transporterlist.js"
                     ));
 

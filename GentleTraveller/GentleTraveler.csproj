@@ -217,10 +217,21 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\transporterlist\ng-controller-layout.js" />
     <Content Include="app\transporterlist\ng-module-transporterlist.js" />
     <Content Include="app\transporterlist\ng-config-transporterlist.js" />
     <Content Include="app\transporterlist\ng-controller-transporterlist.js" />
     <Content Include="app\transporterlist\ng_transporterlist.html" />
+    <Content Include="Content\img\svg\avatar-1.svg" />
+    <Content Include="Content\img\svg\avatar-4.svg" />
+    <Content Include="Content\img\svg\avatars.svg" />
+    <Content Include="Content\img\svg\google_plus.svg" />
+    <Content Include="Content\img\svg\hangouts.svg" />
+    <Content Include="Content\img\svg\mail.svg" />
+    <Content Include="Content\img\svg\menu.svg" />
+    <Content Include="Content\img\svg\phone.svg" />
+    <Content Include="Content\img\svg\share.svg" />
+    <Content Include="Content\img\svg\twitter.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -239,6 +250,7 @@
     <Content Include="package.json" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="readme.md" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

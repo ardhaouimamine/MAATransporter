@@ -8,13 +8,10 @@
 
 /* Toolbar area */
 
-.menu {
+/*.menu {
   background-color: transparent;
-  border: none;
-  height: 38px;
-  margin: 16px;
-  width: 36px;
-}
+  padding:16px 24px;
+}*/
 
 md-toolbar h1 {
   margin: auto;
@@ -70,11 +67,11 @@ md-list .md-button {
   height:36px;
 }
 
-md-button.menuBtn > md-icon {
+/*md-button.menuBtn > md-icon {
   fill:white;
   width:24px;
   height:24px;
-}
+}*/
 
 #content .md-button.contact:active > md-icon {
   background-color: #dadada;
@@ -127,4 +124,16 @@ span.name {
   font-weight: bold;
   font-size:1.1em;
   padding-left:5px;
+}
+
+.main-toolbar {
+  /* Put top toolbar on a higher layer than sidenav, which has z-index: 60 */
+  z-index: 61;
+}
+.md-sidenav-left {
+    position:relative;
+    display:block;
+}
+md-toolbar h2.title {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }

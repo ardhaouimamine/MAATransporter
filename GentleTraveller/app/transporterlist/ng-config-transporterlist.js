@@ -18,7 +18,7 @@
     //configTransporter.$inject = ['$routeProvider', '$locationProvider', 'RestangularProvider', '$mdThemingProvider'];
     angular
         .module('transporterlist')
-        .config(function ($routeProvider, $locationProvider, RestangularProvider, $mdThemingProvider, $mdIconProvider, configTransporterProvider) {
+        .config(function ($routeProvider, $locationProvider, RestangularProvider, $mdThemingProvider, configTransporterProvider) {
 
             $routeProvider.when('/', {
                 templateUrl: configTransporterProvider.templateBaseUrl + 'ng_transporterlist.html',

@@ -11,25 +11,33 @@
     <meta name="description" content="The description of my page" />
 </head>
 <body ng-app="transporterlist" ng-controller="layoutController as vm" layout="column">
-    <md-toolbar layout="row">
-        <md-button class="menu" ng-click="vm.toggleSideNav()" aria-label="Show Menu">
-            <ng-md-icon size="48" icon="menu"></ng-md-icon>
+    @*<md-toolbar layout="column" class="md-toolbar-tools">
+            <md-button class="menu" ng-click="vm.toggleSideNav()" aria-label="Show Menu">
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            <h2>YOLO MR TRANSPORTER</h2>
+        </md-toolbar>*@
+    <md-toolbar layout="column" class="md-toolbar-tools">
+
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="vm.toggleSideNav()">
+            <!--<ng-md-icon style="fill:white" icon="menu"></ng-md-icon>-->
+            <md-icon md-svg-icon="Content/img/svg/menu.svg" style="fill:white"></md-icon>
         </md-button>
-        <h1>YOLO MR TRANSPORTER</h1>
+        <div flex><h2 class="title">YOLO MR TRANSPORTER</h2></div>
     </md-toolbar>
     <div flex layout="row">
-
-        <md-sidenav md-component-id="left" md-is-locked-open="vm.toggleMenu" class="md-whiteframe-z2">
-            <md-list>
-                <md-list-item ng-repeat="it in vm.sideNavElements">
-                    <md-button ng-click="" ng-class="{'selected' : it === 'Home' }">
-                        {{it}}
-                    </md-button>
-                </md-list-item>
-            </md-list>
-        </md-sidenav>
-
-        <md-content flex id="content">
+        <div flex="25">
+            <md-sidenav md-component-id="left" md-is-locked-open="vm.toggleMenu" class="md-sidenav-left md-whiteframe-z2">
+                <md-list>
+                    <md-list-item ng-repeat="it in vm.sideNavElements">
+                        <md-button ng-click="" ng-class="{'selected' : it === 'Home' }">
+                            {{it}}
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
+        </div>
+        <md-content flex="75" id="content">
             <div ng-view>
                 @RenderBody()
             </div>
