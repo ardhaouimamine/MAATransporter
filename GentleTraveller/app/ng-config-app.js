@@ -1,13 +1,10 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('transporterlist').provider('configTransporter', function () {
+    angular.module('app').provider('configTransporter', function () {
 
         this.apiRootUrl = '/api/';
-        this.templateBaseUrl = 'app/transporterlist/';
-
-        //this.assetsUrl = '/assets/';
-        //this.assetsAngularUrl = this.assetsUrl + 'angular/';
+        this.templateBaseUrl = 'app/';
 
         this.$get = function $get() {
             return this;
@@ -17,17 +14,25 @@
 
     //configTransporter.$inject = ['$routeProvider', '$locationProvider', 'RestangularProvider', '$mdThemingProvider'];
     angular
-        .module('transporterlist')
+        .module('app')
         .config(function ($routeProvider, $locationProvider, RestangularProvider, $mdThemingProvider, configTransporterProvider) {
 
             $routeProvider.when('/', {
-                templateUrl: configTransporterProvider.templateBaseUrl + 'ng_transporterlist.html',
-                controller: 'transporterlistController'
+                templateUrl: configTransporterProvider.templateBaseUrl + 'ng_home.html',
+                controller: 'homeController'
+                //templateUrl: configTransporterProvider.templateBaseUrl + 'transporterlist/ng_transporterlist.html',
+                //controller: 'transporterlistController',
+                //module: 'app.transporterlist'
+            }).
+            when('/transporters', {
+            templateUrl: configTransporterProvider.templateBaseUrl + 'transporterlist/ng_transporterlist.html',
+            controller: 'transporterlistController',
+            module: 'app.transporterlist'
             }).
             otherwise({
                 redirectTo: '/'
             });
-            $locationProvider.html5Mode(true);
+            //$locationProvider.html5Mode(true);
             RestangularProvider.setBaseUrl(configTransporterProvider.apiRootUrl);
             $mdThemingProvider.theme('default')
                               .primaryPalette('green')
@@ -51,5 +56,11 @@
             //    }
             //    return extractedData;
             //});
+        }).factory('TitleService', function(){
+            var title = 'default';
+            return {
+                title: function() { return title; },
+                setTitle: function(newTitle) { title = newTitle; }
+            };
         });
 })();

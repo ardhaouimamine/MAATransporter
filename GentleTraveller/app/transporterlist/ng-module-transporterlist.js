@@ -1,11 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('transporterlist', [
+    angular.module('app.transporterlist', [
         // Angular modules 
-        'ngRoute',
-        'restangular',
-        'ngMaterial',
+        'restangular'
         //'ngMdIcons',
         // Custom modules 
 

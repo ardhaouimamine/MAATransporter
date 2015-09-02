@@ -10,7 +10,7 @@
 
     <meta name="description" content="The description of my page" />
 </head>
-<body ng-app="transporterlist" ng-controller="layoutController as vm" layout="column">
+<body ng-app="app" ng-controller="layoutController as vm" layout="column">
     @*<md-toolbar layout="column" class="md-toolbar-tools">
             <md-button class="menu" ng-click="vm.toggleSideNav()" aria-label="Show Menu">
                 <ng-md-icon icon="menu"></ng-md-icon>
@@ -23,15 +23,15 @@
             <!--<ng-md-icon style="fill:white" icon="menu"></ng-md-icon>-->
             <md-icon md-svg-icon="Content/img/svg/menu.svg" style="fill:white"></md-icon>
         </md-button>
-        <div flex><h2 class="title">YOLO MR TRANSPORTER</h2></div>
+        <div flex><h2 class="title" ng-bind="vm.theTitle.title()"></h2></div>
     </md-toolbar>
     <div flex layout="row">
         <div flex="25">
-            <md-sidenav md-component-id="left" md-is-locked-open="vm.toggleMenu" class="md-sidenav-left md-whiteframe-z2">
+            <md-sidenav md-component-id="left" @*md-is-locked-open="vm.toggleMenu"*@ class="md-sidenav-left">
                 <md-list>
                     <md-list-item ng-repeat="it in vm.sideNavElements">
-                        <md-button ng-click="" ng-class="{'selected' : it === 'Home' }">
-                            {{it}}
+                        <md-button ng-href="{{it.url}}" ng-class="{'selected' : vm.selected(it) }">
+                            {{it.title}}
                         </md-button>
                     </md-list-item>
                 </md-list>
@@ -44,8 +44,22 @@
         </md-content>
 
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/app")
-    @RenderSection("scripts", required: false)
+    <script src="/Scripts/jquery-2.1.4.js"></script>
+
+    <script src="~/lib/src/angular/angular.js"></script>
+    <script src="~/lib/src/angular-route/angular-route.js"></script>
+    <script src="~/lib/src/lodash/lodash.js"></script>
+    <script src="~/lib/src/restangular/restangular.js"></script>
+    <script src="~/lib/src/angular-animate/angular-animate.js"></script>
+    <script src="~/lib/src/angular-aria/angular-aria.js"></script>
+    <script src="~/lib/src/angular-material/angular-material.js"></script>
+    <script src="~/lib/src/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="~/app/ng-app-module.js"></script>
+    <script src="~/app/ng-config-app.js"></script>
+    <script src="~/app/ng-controller-layout.js"></script>
+    <script src="~/app/ng-controller-home.js"></script>
+    <script src="~/app/transporterlist/ng-module-transporterlist.js"></script>
+    <script src="~/app/transporterlist/ng-controller-transporterlist.js"></script>
+
 </body>
 </html>

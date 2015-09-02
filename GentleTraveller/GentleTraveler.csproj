@@ -217,10 +217,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\transporterlist\ng-controller-layout.js" />
+    <Content Include="app\ng-app-module.js" />
+    <Content Include="app\ng-controller-home.js" />
+    <Content Include="app\ng-controller-layout.js" />
     <Content Include="app\transporterlist\ng-module-transporterlist.js" />
-    <Content Include="app\transporterlist\ng-config-transporterlist.js" />
+    <Content Include="app\ng-config-app.js" />
     <Content Include="app\transporterlist\ng-controller-transporterlist.js" />
+    <Content Include="app\ng_home.html" />
     <Content Include="app\transporterlist\ng_transporterlist.html" />
     <Content Include="Content\img\svg\avatar-1.svg" />
     <Content Include="Content\img\svg\avatar-4.svg" />

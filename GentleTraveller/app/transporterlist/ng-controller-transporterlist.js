@@ -2,14 +2,15 @@
     'use strict';
 
     angular
-        .module('transporterlist')
+        .module('app.transporterlist')
         .controller('transporterlistController', transporterlistController);
 
-    transporterlistController.$inject = ['Restangular','$scope'];
+    transporterlistController.$inject = ['Restangular', '$scope', 'TitleService'];
 
-    function transporterlistController(Restangular, $scope) {
+    function transporterlistController(Restangular, $scope, TitleService) {
         /* jshint validthis:true */
         //var vm = this;
+        TitleService.setTitle('Transporters');
         $scope.travelers = [];
 
         activate();
